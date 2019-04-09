@@ -21,7 +21,7 @@ const styles = {
   shape: { width: '100%', height: 'auto', willChange: 'transform' },
 }
 
-const first = `art+`
+const first = `art`
 const last = `code`
 
 class App extends React.Component {
@@ -51,37 +51,37 @@ class App extends React.Component {
             {
               loc: '/images/portfolio/metro/wmm_detail.jpg',
               offset: '2',
-              color: '#ff00ff',
+              color: '#000',
             },
             {
               loc: '/images/portfolio/metro/homepage_lower_image.jpg',
               offset: '0',
-              color: '#ff0000',
+              color: '#000',
             },
             {
               loc: '/images/portfolio/metro/homepage_hero_image.jpg',
               offset: '0',
-              color: '#ff0000',
+              color: '#000',
             },
             {
               loc: '/images/portfolio/metro/map5_1024x1024.gif',
               offset: '1',
-              color: '#00ffff',
+              color: '#000',
             },
             {
               loc: '/images/portfolio/metro/sizeB_1024x1024.jpg',
               offset: '2',
-              color: '#ff00ff',
+              color: '#000',
             },
             {
               loc: '/images/portfolio/metro/wmm_detail04_1024x1024.jpg',
               offset: '2',
-              color: '#ff00ff',
+              color: '#000',
             },
             {
               loc: '/images/portfolio/metro/countries_1024x1024.jpg',
               offset: '2',
-              color: '#ff00ff',
+              color: '#000',
             },
           ],
           cta: 'Visit me',
@@ -422,8 +422,8 @@ class App extends React.Component {
         to={{
           coords: toggle ? [0, 0] : [35, 0],
           color: toggle ? 'rgba(0,0,0,0.01)' : 'rgba(0,0,0,0.3)',
-          start: toggle ? '#971495' : '#971495',
-          end: toggle ? '#247BA0' : '#F3FFBD',
+          start: toggle ? '#000' : '#CCC',
+          end: toggle ? '#111' : '#CCC',
           scale: toggle ? triangleScale : 15,
           shape: toggle ? TRIANGLE : TRIANGLE,
           stop: toggle ? '0%' : '50%',
@@ -521,7 +521,7 @@ class App extends React.Component {
       <div className={`ac_modal_screen ${this.state.modal ? `active` : ``}`} onClick={this.handleToggle()}>
         <div className="ac_view_wrapper">
           <div className="ac_top_logo modal" style={{ marginRight: '12px', color: current.color }}>
-            <h2>
+            <h2 className="fatface">
               {first}
               <strong>{last}</strong>
             </h2>
@@ -590,9 +590,8 @@ class App extends React.Component {
         {this.renderModal(currentModal)}
         
         <div className="ac_top_logo" style={{ color: '#111' }}>
-          <h2>
-            {first}
-            <strong>{last}</strong>
+          <h2 className="fatface">
+            {first} <span style={{opacity:'0.5'}}> + </span>{last}
           </h2>
         </div>
         <div className="ac_top_menu">
@@ -609,7 +608,7 @@ class App extends React.Component {
         
         <div className="ac_bottom_logo">
           {/*<div style={{color:'#CCC'}}>Contact:</div>*/}
-          <div>hello@artcode.dev</div>
+          <div>gcid@artcodedata.com</div>
         </div>
         
         <Parallax ref={ref => (this.parallax = ref)} pages={5} onScroll={e => console.log(e)}>
@@ -623,8 +622,9 @@ class App extends React.Component {
             <img src={url('t_big_gray')} style={{ width: '100%', transform: 'rotate(180deg)' }} alt="" />
           </ParallaxLayer>
           
-          <ParallaxLayer offset={1.7} style={{ position: 'fixed', left: '-70px' }}>
-            <img src={url('t_big_gray')} style={{ width: '100%' }} alt="" />
+          {/*DESIGN BG*/}
+          <ParallaxLayer offset={1.7} style={{ position: 'fixed', left: '-170px' }}>
+            <img src={url('t_full_green')} style={{ width: '100%',transform: 'rotate(90deg)' }} alt="" />
           </ParallaxLayer>
           
           <ParallaxLayer offset={3.5} speed={0.4} style={{ position: 'fixed', right: '-100px' }}>
@@ -634,6 +634,34 @@ class App extends React.Component {
           <ParallaxLayer offset={4} speed={1} style={{ position: 'fixed', left: '-70px' }}>
             <img src={url('t_big_gray')} style={{ width: '100%' }} alt="" />
           </ParallaxLayer>
+  
+  
+          {/* PREAMBLE ///////////////////////// */}
+          <ParallaxLayer
+            offset={0}
+            speed={0.1}
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            
+            <h1>Think Big</h1>
+          </ParallaxLayer>
+  
+  
+          <ParallaxLayer offset={0.7} speed={-0.12} style={{ opacity: 1 }}>
+            <img src={url('t_out_red')} style={{ display: 'block', width: '5%', marginTop:'-19px', marginLeft: '17%',transform: 'rotate(180deg)'  }} alt="" />
+          </ParallaxLayer>
+          <ParallaxLayer offset={0.7} speed={-0.15} style={{ opacity: 1 }}>
+            <img src={url('t_out_orange')} style={{ display: 'block', width: '5%', marginTop:'-19px', marginLeft: '17%',transform: 'rotate(180deg)'  }} alt="" />
+          </ParallaxLayer>
+          <ParallaxLayer offset={0.7} speed={-0.10} style={{ opacity: 1 }}>
+            <img src={url('t_out_green')} style={{ display: 'block', width: '5%', marginTop:'-19px', marginLeft: '17%',transform: 'rotate(180deg)'  }} alt="" />
+          </ParallaxLayer>
+          <ParallaxLayer offset={0.7} speed={-0.10} style={{ opacity: 1 }}>
+            <a onClick={() => this.parallax.scrollTo(1)}>
+              <img src={url('t_big_gray')} style={{ opacity:'0.1', display: 'block', width: '5%', marginTop:'-19px', marginLeft: '17%',transform: 'rotate(180deg)'  }} alt="" />
+            </a>
+          </ParallaxLayer>
+  
           
           
           {/* INTRO ///////////////////////// */}
@@ -643,10 +671,10 @@ class App extends React.Component {
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
             <p className="ac_initial">
-              Welcome to <strong>artCode</strong> ,
-              we help landing big <a href='#' className="ac_font_ide" onClick={() => this.parallax.scrollTo(1)}>ideas</a> into well defined timelines and budgets.
-              We <a href='#' className="ac_font_des" onClick={() => this.parallax.scrollTo(2)}>design</a> the absolute best experience for your customer.
-              We bring this idea to life <a href='#' className="ac_font_dev" onClick={() => this.parallax.scrollTo(3)}>coding</a> and deploying it in the real world.</p>
+              Welcome to art+code ,
+              we help landing big <a href='#' className="ac_font_ide fatface" onClick={() => this.parallax.scrollTo(1)}>ideas</a> into well defined timelines and budgets.
+              We <a href='#' className="ac_font_des fatface" onClick={() => this.parallax.scrollTo(2)}>design</a> the absolute best experience for your customer.
+              We bring this idea to life <a href='#' className="ac_font_dev fatface" onClick={() => this.parallax.scrollTo(3)}>coding</a> and deploying it in the real world.</p>
           </ParallaxLayer>
           
           
@@ -746,27 +774,30 @@ class App extends React.Component {
           >
             <img src="/images/mini_triangles1.png" className="ac_show_mobile" style={{ width: '60%', marginRight: '10%' }} alt="" />
           </ParallaxLayer>
+  
+          <ParallaxLayer className="ac_hide_mobile" offset={1.21} speed={-0.25}>
+            <h3 className="ac_font_ide fatface" style={{ marginLeft: '13%', fontSize:'30px' }}>1.</h3>
+          </ParallaxLayer>
           
           <ParallaxLayer offset={1.22} speed={-0.2} style={{ opacity: 1 }}>
             <h1 className="ac_title ac_font_ide" style={{ marginLeft: '13%' }}>
-              1. idea
+              idea
             </h1>
           </ParallaxLayer>
           
           <ParallaxLayer offset={1.4} speed={-0.1} style={{ opacity: 1 }}>
             <p className="ac_description" style={{ marginLeft: '14%' }}>
-              ArtCode can help companies define the core purpose of an idea and define a clar path to make it happen. We not only defining a realistic timeline and budget, but also help project managing it to to completion.
+              ArtCode can help companies define the core purpose of an idea and define a clar path to make it happen. We not only define a realistic timeline and budget, but also help project managing it to to completion.
             </p>
           </ParallaxLayer>
           
           <ParallaxLayer offset={1.3} speed={0} style={{ opacity: 1 }}>
             <div className="ac_description" style={{ marginLeft: '70%' }}>
               <ul>
-                <li>Branded UX</li>
-                <li>Microsites</li>
+                <li>Digital Rebranding</li>
+                <li>Experience Design</li>
                 <li>Dashboards</li>
-                <li>Marketplace</li>
-                <li>Events</li>
+                <li>Marketplaces</li>
                 <li>Communities</li>
                 
               </ul>
@@ -815,23 +846,32 @@ class App extends React.Component {
           </ParallaxLayer>
           
           {/* DESIGN  ////////////////////// */}
-          
+  
           <ParallaxLayer
-            offset={1.9}
-            speed={0}
+            offset={1.75}
+            speed={0.6}
             onClick={() => this.parallax.scrollTo(1)}
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
-            <img src="/images/mini_triangles1.png" className="ac_hide_mobile" style={{ width: '20%', marginLeft: '-60%', opacity:'0.5' }} alt="" />
+            <img src="/images/t_full_red.svg" className="ac_hide_mobile ac_shadow_triangle" style={{ width: '3%', marginLeft: '-70%', opacity:'1', transform: 'rotate(-180deg)' }} alt="" />
+          </ParallaxLayer>
+          
+          <ParallaxLayer
+            offset={1.95}
+            speed={0.5}
+            onClick={() => this.parallax.scrollTo(1)}
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <img src="/images/t_full_red.svg" className="ac_hide_mobile ac_shadow_triangle" style={{ width: '3%', marginLeft: '-70%', opacity:'1', transform: 'rotate(-180deg)' }} alt="" />
           </ParallaxLayer>
           
           <ParallaxLayer
             offset={2.1}
-            speed={0.2}
+            speed={0.5}
             onClick={() => this.parallax.scrollTo(1)}
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
-            <img src="/images/mini_triangles2.png" className="ac_hide_mobile" style={{ width: '15%', marginLeft: '0%' }} alt="" />
+            <img src="/images/t_full_green.svg" className="ac_hide_mobile ac_shadow_triangle" style={{ width: '15%', marginLeft: '5%' }} alt="" />
           </ParallaxLayer>
           
           <ParallaxLayer
@@ -840,7 +880,7 @@ class App extends React.Component {
             onClick={() => this.parallax.scrollTo(2)}
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
-            <img src="/images/t_big_design.png" className="ac_hide_mobile" style={{ width: '50%', marginRight: '20%' }} alt="" />
+            <img src="/images/t_big_design.png" className="ac_hide_mobile ac_shadow_triangle" style={{ width: '50%', marginRight: '20%'}} alt="" />
           </ParallaxLayer>
           <ParallaxLayer
             offset={2}
@@ -866,12 +906,12 @@ class App extends React.Component {
           </ParallaxLayer>
           
           <ParallaxLayer offset={2.5} speed={-0.3} style={{ pointerEvents: 'none' }}>
-            <img src={url('t_full_green')} style={{ width: '15%', marginLeft: '90%' }} alt="" />
+            <img src={url('t_full_green')} style={{ width: '15%', marginLeft: '90%',transform: 'rotate(-90deg)' }} alt="" />
           </ParallaxLayer>
           
           <ParallaxLayer offset={2} speed={0.8} style={{ opacity: 0.5 }}>
-            <img src={url('t_out_green')} style={{ display: 'block', width: '20%', marginLeft: '55%' }} alt="" />
-            <img src={url('t_out_green')} style={{ display: 'block', width: '10%', marginLeft: '15%' }} alt="" />
+            <img src={url('t_out_green')} className="ac_shadow_triangle" style={{ display: 'block', width: '20%', marginLeft: '55%' }} alt="" />
+            <img src={url('t_out_blue')} className="ac_shadow_triangle" style={{ display: 'block', width: '10%', marginLeft: '15%' }} alt="" />
           </ParallaxLayer>
           
           <ParallaxLayer offset={2.2} speed={0.2} style={{ opacity: 0.7 }}>
@@ -890,8 +930,11 @@ class App extends React.Component {
             </div>
             
           </ParallaxLayer>
-          <ParallaxLayer offset={2.2} speed={-0.2}>
-            <h1 className="ac_title ac_font_des" style={{ marginLeft: '60%' }}>2.Design</h1>
+          <ParallaxLayer className="ac_hide_mobile" offset={2.2} speed={-0.2}>
+            <h1 className="" style={{ marginLeft: '61%', color:'#bebe3a', fontSize:'30px' }}>2.</h1>
+          </ParallaxLayer>
+          <ParallaxLayer offset={2.2} speed={-0.1}>
+            <h1 className="ac_title ac_font_des" style={{ marginLeft: '60%', color:'#bebe3a' }}>Design</h1>
           </ParallaxLayer>
           
           <ParallaxLayer
@@ -900,7 +943,7 @@ class App extends React.Component {
             onClick={() => this.parallax.scrollTo(1)}
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
-            <img src="/images/mini_triangles2.png" className="ac_hide_mobile" style={{ width: '20%', marginLeft: '-60%', opacity:'0.5' }} alt="" />
+            <img src="/images/t_full_green.svg" className="ac_hide_mobile ac_shadow_triangle" style={{ width: '20%', marginLeft: '-70%', opacity:'0.5' }} alt="" />
           </ParallaxLayer>
           
           <ParallaxLayer offset={2.78} speed={0} >
@@ -908,12 +951,12 @@ class App extends React.Component {
   
               <h4>Design Stack</h4>
               
-              <img src="/images/icons/logo_sketch.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_framer.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_invision.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_adobe.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_daz.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_pencil.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_sketch.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_framer.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_invision.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_adobe.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_daz.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_pencil.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
             </div>
           </ParallaxLayer>
           
@@ -941,6 +984,25 @@ class App extends React.Component {
           </ParallaxLayer>
           
           {/* DEVELOPMENT  ////////////////////// */}
+  
+  
+          <ParallaxLayer
+            offset={2.75}
+            speed={0.6}
+            onClick={() => this.parallax.scrollTo(1)}
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <img src="/images/t_full_orange.svg" className="ac_hide_mobile ac_shadow_triangle" style={{ width: '3%', marginLeft: '-70%', opacity:'1', transform: 'rotate(-180deg)' }} alt="" />
+          </ParallaxLayer>
+  
+          <ParallaxLayer
+            offset={2.95}
+            speed={0.5}
+            onClick={() => this.parallax.scrollTo(1)}
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <img src="/images/t_full_orange.svg" className="ac_hide_mobile ac_shadow_triangle" style={{ width: '3%', marginLeft: '-70%', opacity:'1', transform: 'rotate(-180deg)' }} alt="" />
+          </ParallaxLayer>
           
           
           
@@ -974,35 +1036,43 @@ class App extends React.Component {
           
           <ParallaxLayer offset={3.3} speed={0} style={{ marginLeft: '5%' }}>
             <p className="ac_description dev">
-              ArtCode team mirrors development techniques created by the best software companies in the world such as Agile Development and Continuous Integration. But overall, we are friendly IT that will always answer any question you have.
+              <span style={{fontSize:'1.5em', color:'#838383'}} >
+                <span className="fatface">art</span>+<span className="fatface">code </span>
+              </span>
+                
+                team mirrors development techniques created by the best software companies in the world such as Agile Development and Continuous Integration. But overall, we are friendly IT that will always answer any question you might have.
             </p>
-            
+          </ParallaxLayer>
+  
+          <ParallaxLayer className="ac_hide_mobile" offset={3.16} speed={0.15} style={{ opacity: 1, fontSize:'8px'}}>
+            <h1 className="ac_title ac_font_dev" style={{marginLeft:'42%'}}>3.</h1>
           </ParallaxLayer>
           <ParallaxLayer offset={3.15} speed={0.2} style={{ opacity: 1 }}>
-            <h1 className="ac_title ac_font_dev">3. Code</h1>
+            <h1 className="ac_title ac_font_dev">Code</h1>
           </ParallaxLayer>
+          
           
           <ParallaxLayer offset={3.68} speed={0.1} style={{ opacity: 1 }}>
             <div className="ac_stack">
               <h4>Development Stack</h4>
               
-              <img src="/images/icons/logo_react.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_gql.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_html5.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_three.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_aws.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_cloud.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_react.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_gql.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_html5.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_three.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_aws.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_cloud.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
             </div>
           </ParallaxLayer>
           
           <ParallaxLayer offset={3.82} speed={0.1} style={{ opacity: 1 }}>
             <div className="ac_stack">
-              <img src="/images/icons/logo_apollo.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_atlassian.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_github.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_jest.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_webgl.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
-              <img src="/images/icons/logo_webpack.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_apollo.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_atlassian.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_github.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_jest.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_webgl.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
+              <img src="/images/logos/logo_webpack.png" style={{ width: '40px', marginLeft: '10px' }} alt="" />
             </div>
           </ParallaxLayer>
           
@@ -1022,23 +1092,23 @@ class App extends React.Component {
             <div className="ac_customer_logos">
               
               <div>
-                <img src="/images/icons/logo_columbia.png" style={{ marginLeft: '0' }} alt="" />
-                <img src="/images/icons/logo_coca.png" alt="" />
+                <img src="/images/logos/logo_columbia.png" style={{ marginLeft: '0' }} alt="" />
+                <img src="/images/logos/logo_coca.png" alt="" />
               </div>
               <div>
-                <img src="/images/icons/logo_directv.png" alt="" />
-                <img src="/images/icons/logo_techstars.png" alt="" />
+                <img src="/images/logos/logo_directv.png" alt="" />
+                <img src="/images/logos/logo_techstars.png" alt="" />
               </div>
             
             </div>
             <div className="ac_customer_logos">
               <div>
-                <img src="/images/icons/logo_radical.png" style={{ marginLeft: '0' }} alt="" />
-                <img src="/images/icons/logo_open.png" alt="" />
+                <img src="/images/logos/logo_radical.png" style={{ marginLeft: '0' }} alt="" />
+                <img src="/images/logos/logo_open.png" alt="" />
               </div>
               <div>
-                <img src="/images/icons/logo_startup.png" alt="" />
-                <img src="/images/icons/logo_factopia.png" alt="" />
+                <img src="/images/logos/logo_startup.png" alt="" />
+                <img src="/images/logos/logo_factopia.png" alt="" />
               </div>
             
             </div>
@@ -1057,14 +1127,14 @@ class App extends React.Component {
           <ParallaxLayer offset={4.7} speed={0.8} >
             <div className="ac_customer_logos">
               <div>
-                <img src="/images/icons/logo_wired_compact.png" className="media" style={{ marginLeft: '0' }} alt="" />
-                <img src="/images/icons/logo_gizmodo_large.png" className="media" alt="" />
+                <img src="/images/logos/logo_wired_compact.png" className="media" style={{ marginLeft: '0' }} alt="" />
+                <img src="/images/logos/logo_gizmodo_large.png" className="media" alt="" />
               </div>
               <div>
-                <img src="/images/icons/logo_fast_large.png" className="media" alt="" />
-                <img src="/images/icons/logo_tech_large.png" className="media" alt="" />
+                <img src="/images/logos/logo_fast_large.png" className="media" alt="" />
+                <img src="/images/logos/logo_tech_large.png" className="media" alt="" />
               </div>
-              {/*<img src="/images/icons/logo_cool_compact.png" className="media" alt="" />*/}
+              {/*<img src="/images/logos/logo_cool_compact.png" className="media" alt="" />*/}
             </div>
           </ParallaxLayer>
         

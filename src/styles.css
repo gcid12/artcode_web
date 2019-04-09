@@ -1,10 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather");
 body {
   margin: 0;
   color: gray;
   font-family: "Roboto Slab", serif;
   background: #FFF;
   color: #112;
+}
+
+h1 {
+  font-family: "Abril Fatface", cursive;
+}
+
+.fatface {
+  font-family: "Abril Fatface", cursive;
 }
 
 .screen {
@@ -16,9 +25,9 @@ body {
 }
 
 .ac_initial {
-  width: 70%;
+  width: 50%;
   color: #474747;
-  font-size: 1.8em;
+  font-size: 2.2em;
   font-weight: 100;
   line-height: 1.5em;
 }
@@ -243,6 +252,10 @@ body {
 }
 .ac_top_menu .menu_item:hover.dev {
   color: #ff6600;
+}
+
+.ac_shadow_triangle {
+  filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.2));
 }
 
 .ac_show_mobile {

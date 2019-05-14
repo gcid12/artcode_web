@@ -412,7 +412,7 @@ class Work extends React.Component {
           thumb: '',
           images: [
             {
-              loc: '/images/portfolio/widgetSystem.jpg',
+              loc: '/images/portfolio/tutum/tutum1.jpg',
               offset: '2',
               color: '#000',
             }
@@ -421,21 +421,6 @@ class Work extends React.Component {
           ctaUrl: '/',
         },
         t14: {
-          title: 'InfraRed Fashion',
-          description:'',
-          color: '#000000',
-          thumb: '',
-          images: [
-            {
-              loc: '/images/portfolio/widgetSystem.jpg',
-              offset: '2',
-              color: '#000',
-            }
-          ],
-          cta: 'Visit me',
-          ctaUrl: '/',
-        },
-        t15: {
           title: 'Retro Slides',
           description:'',
           color: '#000000',
@@ -470,14 +455,39 @@ class Work extends React.Component {
           cta: 'Visit me',
           ctaUrl: '/',
         },
-        t16: {
-          title: 'Coca-Cola Mascot',
+        t15: {
+          title: 'InfraRed Fashion',
           description:'',
           color: '#000000',
           thumb: '',
           images: [
             {
-              loc: '/images/portfolio/widgetSystem.jpg',
+              loc: '/images/portfolio/infra/IRF01.jpg',
+              offset: '2',
+              color: '#000',
+            },
+            {
+              loc: '/images/portfolio/infra/IRF02.jpg',
+              offset: '2',
+              color: '#000',
+            },
+            {
+              loc: '/images/portfolio/infra/IRF03.jpg',
+              offset: '2',
+              color: '#000',
+            }
+          ],
+          cta: 'Visit me',
+          ctaUrl: '/',
+        },
+        t16: {
+          title: 'Coca-Cola 3Rs Mascots',
+          description:'',
+          color: '#000000',
+          thumb: '',
+          images: [
+            {
+              loc: '/images/portfolio/coca/mascots.jpg',
               offset: '2',
               color: '#000',
             }
@@ -488,16 +498,46 @@ class Work extends React.Component {
         t17: {
           title: 'The Promise (Art Direction)',
           description:'',
-          color: '#000000',
+          color: '#CCCCCC',
           thumb: '',
           images: [
             {
-              loc: '/images/portfolio/widgetSystem.jpg',
+              loc: '/images/portfolio/promise/D_04.jpg',
               offset: '2',
-              color: '#000',
-            }
+            },
+            {
+              loc: '/images/portfolio/promise/A_01.jpg',
+              offset: '2',
+            },
+            {
+              loc: '/images/portfolio/promise/blueprint.jpg',
+              offset: '2',
+            },
+            {
+              loc: '/images/portfolio/promise/C_05.jpg',
+              offset: '2',
+            },
+            {
+              loc: '/images/portfolio/promise/C_06.jpg',
+              offset: '2',
+            },
+            {
+              loc: '/images/portfolio/promise/C_07.jpg',
+              offset: '2',
+            },
+            {
+              loc: '/images/portfolio/promise/E_02.jpg',
+              offset: '2',
+            },
+            {
+              loc: '/images/portfolio/promise/E_03.jpg',
+              offset: '2',
+            },
+            {
+              loc: '/images/portfolio/promise/E_06.jpg',
+              offset: '2',
+            },
           ],
-          cta: 'Visit me',
           ctaUrl: '/',
         },
         t18: {
@@ -846,7 +886,7 @@ class Work extends React.Component {
             {this.renderTriangle('t2', '/images/thumb_darkbrain.png','#FFF', 225, 0)}
             {this.renderTriangle('t16', '/images/thumb_mascot.png','#FFF', 18+310, 180-180)}
             {this.renderTriangle('t11', '/images/thumb_metro.png','#FFF', 123+310, 0)}
-            {this.renderTriangle('t13', '/images/thumb_illust.png','#FFF', 70+310, 90)}
+            {this.renderTriangle('t13', '/images/thumb_tutum.png','#FFF', 70+310, 90)}
             
           </ParallaxLayer>
           
@@ -872,8 +912,8 @@ class Work extends React.Component {
   
             {this.renderTriangle('t8', '/images/thumb_3dbrain.png','#FFF', 224, 180)}
             {this.renderTriangle('t9','/images/thumb_go.png', '#FFF', 327, 180)}
-            {this.renderTriangle('t14', '/images/thumb_fashion.png','#FFF', 175+310, 90)}
-            {this.renderTriangle('t15', '/images/thumb_diapos.png','#FFF', 275+315, 90)}
+            {this.renderTriangle('t14', '/images/thumb_diapos.png','#FFF', 175+310, 90)}
+            {/*{this.renderTriangle('t15', '/images/thumb_diapos.png','#FFF', 275+315, 90)}*/}
   
             {this.renderTriangle('t17', '/images/thumb_promesa.png','#FFF', 224+314, 180)}
             {this.renderTriangle('t19', '/images/thumb_1desk.png','#FFF', 174+205, 270)}

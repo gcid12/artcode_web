@@ -1,9 +1,7 @@
 //sass --watch styles.scss styles.css
 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
-
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface');
-
+V
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
 
 
@@ -29,6 +27,7 @@ body{
 //.fatface{
 //    font-family: 'Abril Fatface', cursive;
 //}
+
 
 h1{
     font-family: 'Major Mono Display', cursive;
@@ -382,6 +381,7 @@ h1{
 
     .ac_initial{
         font-size:1.4em;
+        width:70%;
 
         a{
             font-size:1.4em;
@@ -455,13 +455,15 @@ h1{
     }
 
     .ac_hide_mobile{
-        display:none;
+        display:none !important;
     }
 
     .ac_show_mobile{
         display:block;
     }
 }
+
+
 
 
 

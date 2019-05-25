@@ -594,12 +594,13 @@ class Home extends React.Component {
           <h2 className="fatface">
             {first}<span style={{opacity:'0.5'}}>+</span>{last}
           </h2>
+          
         </div>
-        {/*<div className="ac_top_right">*/}
-          {/*<div className="fatfacex">*/}
-            {/*Work |  About  | Contact*/}
-          {/*</div>*/}
-        {/*</div>*/}
+        <div className="ac_top_right ac_show_mobile">
+          <div className="fatfacex">
+            hello@artcode.dev
+          </div>
+        </div>
         <div className="ac_top_menu">
           <a role="link" onClick={() => this.parallax.scrollTo(1)}>
             <div className="menu_item idea fatface">1. iDea</div>
@@ -615,7 +616,7 @@ class Home extends React.Component {
           {/*<a role="link" onClick={() => this.parallax.scrollTo(3)}>*/}
             {/*<div className="menu_item dev">About</div>*/}
           {/*</a>*/}
-          <Link to={'/work'}>
+          <Link to={'/work'} className="ac_hide_mobile">
             <div className="menu_item gen fatface"> WOrk </div>
           </Link>
         </div>
@@ -623,9 +624,9 @@ class Home extends React.Component {
         <div className="ac_bottom_logo" style={{display:'flex', justifyContent:'space-between', width:'90%'}}>
           {/*<div style={{color:'#CCC'}}>Contact:</div>*/}
           
-          <div>A San Francisco <FaHeart /> based company</div>
+          <div className="ac_hide_mobile">A San Francisco <FaHeart /> based company</div>
   
-          <div>contact: gcid@artcodedata.com</div>
+          <div className="ac_hide_mobile">contact: hello@artcode.dev</div>
           
         </div>
         
@@ -703,6 +704,7 @@ class Home extends React.Component {
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
             <img src="/images/mini_triangles2.png" className="ac_hide_mobile" style={{ width: '55%', opacity:'0.7', marginLeft: '60%' }} alt="" />
+            
           </ParallaxLayer>
           
           

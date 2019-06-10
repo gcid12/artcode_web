@@ -82,7 +82,10 @@
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
 				"TemplateURL": "https://s3.amazonaws.com/artcodew-20190315132140-deployment/amplify-cfn-templates/hosting/template.json",
-				"Parameters": {}
+				"Parameters": {
+					"bucketName": "artcodew-20190315132246-hostingbucket",
+					"env": "NONE"
+				}
 			}
 		}
 	},

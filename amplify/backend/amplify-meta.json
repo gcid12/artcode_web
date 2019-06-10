@@ -19,7 +19,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/artcodew-20190315132140-deployment/amplify-cfn-templates/hosting/template.json",
 				"logicalId": "hostingS3AndCloudFront"
 			},
-			"lastPushTimeStamp": "2019-03-15T20:36:24.403Z",
+			"lastPushTimeStamp": "2019-06-04T22:25:36.805Z",
 			"output": {
 				"CloudFrontSecureURL": "https://dmuyvw1rf8y4t.cloudfront.net",
 				"S3BucketSecureURL": "https://artcodew-20190315132246-hostingbucket.s3.amazonaws.com",
@@ -29,7 +29,7 @@
 				"HostingBucketName": "artcodew-20190315132246-hostingbucket",
 				"CloudFrontDomainName": "dmuyvw1rf8y4t.cloudfront.net"
 			},
-			"lastPushDirHash": "SFNLDRcBGyEcsxz0XQ32ddQQF+o="
+			"lastPushDirHash": "VmOHhza/0ZQd9S6OmhtSlOFsxxo="
 		}
 	}
 }

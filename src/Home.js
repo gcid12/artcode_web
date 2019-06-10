@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import './styles.css'
 
 const TRIANGLE = 'M20,380 L380,380 L380,380 L200,20 L20,380 Z'
-const RECTANGLE = 'M20,20 L20,380 L380,380 L380,20 L20,20 Z'
 const styles = {
   container: {
     width: '120px',
@@ -23,8 +22,51 @@ const styles = {
   shape: { width: '100%', height: 'auto', willChange: 'transform' },
 }
 
-const first = `ArT`
-const last = `coDe`
+const content = {
+  portfolio:{
+    first:'gerarDo',
+    last:'ciD',
+    welcome:[
+      'Welcome to my portfolio , I love working with founders with big ',
+      'iDeas',
+      ' and ambitious projects. I ',
+      'DesIgn',
+      ' and ',
+      'coDe',
+      ' everything by hand to craft a perfect interaction between product and user.'
+    ],
+    idea:"I help founders land abstract ideas into well defined projects and specs. Give me a problem and I will get back to you with a solution.",
+    design:"Whether you have a broken UX flow or your company is still trying to define it's own identity. I can help designing the most usable and best looking product in your category." ,
+    code:"I can create perfectly coded components (React, Vue, Swift) for your backend team. I observe good practices, commit often and write awesome specs. ",
+    logos:'I have worked with',
+    footerA:'A San Francisco ',
+    footerB:' based developer ',
+    contact:'contact: hello@artcode.dev'
+  },
+  studio:{
+    first:'Art',
+    last:'coDe',
+    welcome:[
+      'Welcome to art+code , a Digital agency that translates big ',
+      'iDeas',
+      ' into well defined timelines and budgets. We ',
+      'DesIgn',
+      ' and ',
+      'coDe',
+      ' everything to be sure we deliver pixel perfect experiences for your users.'
+    ],
+    idea:'We help companies define the core purpose of an idea and define a clear path to make it happen. We not only define a realistic timeline and budget, but also help project managing it to completion.',
+    design:'Our approach of design is greatly defined by research and experimentation. We believe that design is a perfect balance between creativity and functionality. We obsessively follow UX best practices and always have accessibility and ergonomy in mind.',
+    code:'Our team mirrors development techniques created by the best software companies in the world such as Agile Development and Continuous Integration. But overall, we are friendly IT that will always answer to any question you might have.',
+    logos:'We have worked with',
+    footerA:'A San Francisco ',
+    footerB:' based company ',
+    contact:'contact: hello@artcode.dev'
+  }
+ 
+};
+const info = content.portfolio;
+
 
 class Home extends React.Component {
   constructor() {
@@ -515,16 +557,13 @@ class Home extends React.Component {
     if (id) {
       current = this.state.info[id]
     }
-    console.log(current)
-    
-    const layerNumber = 0
     
     return (
       <div className={`ac_modal_screen ${this.state.modal ? `active` : ``}`} onClick={this.handleToggle()}>
         <div className="ac_view_wrapper">
           <div className="ac_top_logo modal" style={{ marginRight: '12px', color: current.color }}>
             <h2 className="fatface">
-              {first}<span style={{opacity:'0.5'}}>+</span>{last}
+              {info.first}<span style={{opacity:'0.5'}}>+</span>{info.last}
             </h2>
             <div style={{ fontSize: '12px', marginLeft: '30px', opacity: '01.7' }}>/ Design / <strong>{current.title} </strong></div>
           
@@ -549,6 +588,7 @@ class Home extends React.Component {
                 <img
                   src={item.loc}
                   style={{ width:'100%', height:'auto', marginTop:'-4px'}}
+                  alt=""
                 />
               )
             })}
@@ -592,7 +632,7 @@ class Home extends React.Component {
         
         <div className="ac_top_logo" style={{ color: '#111' }}>
           <h2 className="fatface">
-            {first}<span style={{opacity:'0.5'}}>+</span>{last}
+            {info.first}<span style={{opacity:'0.5'}}>+</span>{info.last}
           </h2>
           
         </div>
@@ -602,15 +642,15 @@ class Home extends React.Component {
           </div>
         </div>
         <div className="ac_top_menu">
-          <a role="link" onClick={() => this.parallax.scrollTo(1)}>
+          <div role="link" onClick={() => this.parallax.scrollTo(1)}>
             <div className="menu_item idea fatface">1. iDea</div>
-          </a>
-          <a role="link" onClick={() => this.parallax.scrollTo(2)}>
+          </div>
+          <div role="link" onClick={() => this.parallax.scrollTo(2)}>
             <div className="menu_item design fatface">2. DesIGn</div>
-          </a>
-          <a role="link" onClick={() => this.parallax.scrollTo(3)}>
+          </div>
+          <div role="link" onClick={() => this.parallax.scrollTo(3)}>
             <div className="menu_item dev fatface">3. CoDe</div>
-          </a>
+          </div>
           <br/>
           <hr/>
           {/*<a role="link" onClick={() => this.parallax.scrollTo(3)}>*/}
@@ -624,7 +664,7 @@ class Home extends React.Component {
         <div className="ac_bottom_logo" style={{display:'flex', justifyContent:'space-between', width:'90%'}}>
           {/*<div style={{color:'#CCC'}}>Contact:</div>*/}
           
-          <div className="ac_hide_mobile">A San Francisco <FaHeart /> based company</div>
+          <div className="ac_hide_mobile">{info.footerA} <FaHeart /> {info.footerB}</div>
   
           <div className="ac_hide_mobile">contact: hello@artcode.dev</div>
           
@@ -663,9 +703,27 @@ class Home extends React.Component {
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           >
             <p className="ac_initial">
-              Welcome to art+code ,
-              a Digital agency that translates big <a href='#' className="ac_font_ide fatface" onClick={() => this.parallax.scrollTo(1)}>iDeas</a> into well defined timelines and budgets.
-              We <a href='#' className="ac_font_des fatface" onClick={() => this.parallax.scrollTo(2)}>DesIgn</a> and <a href='#' className="ac_font_dev fatface" onClick={() => this.parallax.scrollTo(3)}>coDe</a> everything to be sure we deliver pixel perfect experiences for your audience.</p>
+              {info.welcome[0]}
+              
+              {/*IDEAS*/}
+               <a href='#' className="ac_font_ide fatface" onClick={() => this.parallax.scrollTo(1)}>
+                 {info.welcome[1]}
+               </a>
+              {info.welcome[2]}
+              
+              {/*DESIGN*/}
+              <a href='#' className="ac_font_des fatface" onClick={() => this.parallax.scrollTo(2)}>
+                {info.welcome[3]}
+              </a>
+              {info.welcome[4]}
+  
+              {/*CODE*/}
+              <a href='#' className="ac_font_dev fatface" onClick={() => this.parallax.scrollTo(3)}>
+              {info.welcome[5]}
+              </a>
+              
+              {info.welcome[6]}
+            </p>
           </ParallaxLayer>
           
           
@@ -779,7 +837,7 @@ class Home extends React.Component {
           
           <ParallaxLayer offset={1.4} speed={-0.1} style={{ opacity: 1 }}>
             <p className="ac_description" style={{ marginLeft: '14%' }}>
-                We help companies define the core purpose of an idea and define a clar path to make it happen. We not only define a realistic timeline and budget, but also help project managing it to completion.
+              {info.idea}
             </p>
           </ParallaxLayer>
           
@@ -790,9 +848,8 @@ class Home extends React.Component {
                 <li>Micro websites</li>
                 <li>Native Apps</li>
                 <li>Voice Assistants</li>
-                <li>WebGL Infographics</li>
-                <li>AR / VR</li>
-                
+                <li>Interactive Infographics</li>
+                <li>Dashboards</li>
               </ul>
             </div>
           </ParallaxLayer>
@@ -914,8 +971,7 @@ class Home extends React.Component {
           
           <ParallaxLayer offset={2.4} speed={-0.1}>
             <div className="ac_description des">
-              Our approach of design is greatly defined by research and experimentation. We believe that design is a perfect balance between creativity and functionality. We obsessively follow UX best practices and always have accessibility and ergonomy in mind.
-  
+              {info.design}
               <div className="ac_hide_mobile" style={{fontSize:'0.7em',color:'#3b3b3b', marginTop:'20px'}}>
                 {`<-- Click on thumbnails to explore portfolio`}
               </div>
@@ -1029,7 +1085,7 @@ class Home extends React.Component {
           
           <ParallaxLayer offset={3.3} speed={0} style={{ marginLeft: '5%' }}>
             <p className="ac_description dev">
-                Our team mirrors development techniques created by the best software companies in the world such as Agile Development and Continuous Integration. But overall, we are friendly IT that will always answer to any question you might have.
+              {info.code}
             </p>
           </ParallaxLayer>
   
@@ -1074,7 +1130,7 @@ class Home extends React.Component {
             onClick={() => this.parallax.scrollTo(1)}
             style={{ display: 'flex', justifyContent: 'center', opacity:'0.5' }}
           >
-            <p>We have worked with</p>
+            <p>{info.logos}</p>
           </ParallaxLayer>
           
           <ParallaxLayer offset={4.3} speed={0.2} >
@@ -1116,12 +1172,22 @@ class Home extends React.Component {
           <ParallaxLayer offset={4.7} speed={0.8} >
             <div className="ac_customer_logos">
               <div>
-                <img src="/images/logos/logo_wired_compact.png" className="media" style={{ marginLeft: '0' }} alt="" />
-                <img src="/images/logos/logo_gizmodo_large.png" className="media" alt="" />
-              </div>
-              <div>
-                <img src="/images/logos/logo_fast_large.png" className="media" alt="" />
-                <img src="/images/logos/logo_tech_large.png" className="media" alt="" />
+                <a target="_blank" rel="noopener noreferr" href="https://www.wired.com/2016/01/map-envisions-what-a-worldwide-subway-system-would-be-like/">
+                  <img src="/images/logos/logo_wired_compact.png" className="media" style={{ marginLeft: '0' }} alt="" />
+                </a>
+  
+                <a target="_blank" rel="noopener noreferr" href="https://gizmodo.com/the-world-metro-map-combines-214-subway-systems-into-on-1752674655">
+                  <img src="/images/logos/logo_gizmodo_large.png" className="media" alt="" />
+                </a>
+  
+                <a target="_blank" rel="noopener noreferr" href="https://www.fastcompany.com/3055518/214-subway-systems-combined-into-one-worldwide-metro-map">
+                  <img src="/images/logos/logo_fast_large.png" className="media" alt="" />
+                </a>
+  
+                <a target="_blank" rel="noopener noreferr" href="https://www.businessinsider.com/subway-map-design-with-cities-across-the-world-2016-1">
+                  <img src="/images/logos/logo_tech_large.png" className="media" alt="" />
+                </a>
+  
               </div>
               {/*<img src="/images/logos/logo_cool_compact.png" className="media" alt="" />*/}
             </div>

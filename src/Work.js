@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import './styles.css'
 
 const TRIANGLE = 'M20,380 L380,380 L380,380 L200,20 L20,380 Z'
-const RECTANGLE = 'M20,20 L20,380 L380,380 L380,20 L20,20 Z'
 const styles = {
   container: {
     width: '120px',
@@ -23,11 +22,27 @@ const styles = {
   shape: { width: '100%', height: 'auto', willChange: 'transform' },
 }
 
-const first = `ArT`
-const last = `coDe`
 
-// const first = `gerArDo`
-// const last = `ciD`
+const content = {
+  portfolio:{
+    first:'gerarDo',
+    last:'ciD',
+    footerA:'A San Francisco ',
+    footerB:' based developer ',
+    contact:'contact: hello@artcode.dev'
+  },
+  studio:{
+    first:'Art',
+    last:'coDe',
+    footerA:'A San Francisco ',
+    footerB:' based company ',
+    contact:'contact: hello@artcode.dev'
+  }
+  
+};
+const info = content.portfolio;
+
+
 
 class Work extends React.Component {
   constructor() {
@@ -751,14 +766,14 @@ class Work extends React.Component {
     }
     console.log(current)
     
-    const layerNumber = 0
+    //const layerNumber = 0
     
     return (
       <div className={`ac_modal_screen ${this.state.modal ? `active` : ``}`} onClick={this.handleToggle()}>
         <div className="ac_view_wrapper">
           <div className="ac_top_logo modal" style={{ marginRight: '12px', color: current.color }}>
             <h2 className="fatface">
-              {first}<span style={{opacity:'0.5'}}>+</span>{last}
+              {info.first}<span style={{opacity:'0.5'}}>+</span>{info.last}
             </h2>
             <div style={{ fontSize: '12px', marginLeft: '30px', opacity: '01.7' }}>/ Work / <strong>{current.title} </strong></div>
           
@@ -826,7 +841,7 @@ class Work extends React.Component {
         
         <div className="ac_top_logo" style={{ color: '#111' }}>
           <h2 className="fatface">
-            {first}<span style={{opacity:'0.5'}}>+</span>{last}
+            {info.first}<span style={{opacity:'0.5'}}>+</span>{info.last}
           </h2>
         </div>
   
@@ -839,9 +854,9 @@ class Work extends React.Component {
         <div className="ac_bottom_logo" style={{display:'flex', justifyContent:'space-between', width:'90%'}}>
           {/*<div style={{color:'#CCC'}}>Contact:</div>*/}
           
-          <div>A San Francisco <FaHeart /> based company</div>
+          <div>{info.footerA} <FaHeart /> {info.footerB} </div>
   
-          <div>contact: gcid@artcodedata.com</div>
+          <div>{info.contact} </div>
           
         </div>
         

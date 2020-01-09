@@ -1,0 +1,15 @@
+{
+    "prod": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-artcodew-prod-164152-authRole",
+            "UnauthRoleArn": "arn:aws:iam::723809802133:role/amplify-artcodew-prod-164152-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::723809802133:role/amplify-artcodew-prod-164152-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-artcodew-prod-164152-deployment",
+            "UnauthRoleName": "amplify-artcodew-prod-164152-unauthRole",
+            "StackName": "amplify-artcodew-prod-164152",
+            "StackId": "arn:aws:cloudformation:us-west-2:723809802133:stack/amplify-artcodew-prod-164152/d855afe0-3278-11ea-9608-028ddc441728",
+            "AmplifyAppId": "d3bh2gagymlppw"
+        }
+    }
+}

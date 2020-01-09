@@ -29,14 +29,14 @@ const content = {
     last:'ciD',
     footerA:'A San Francisco ',
     footerB:' based developer ',
-    contact:'contact: hello@artcode.dev'
+    contact:'contact: hello@artcodedata.com'
   },
   studio:{
     first:'Art',
     last:'coDe',
     footerA:'A San Francisco ',
     footerB:' based company ',
-    contact:'contact: hello@artcode.dev'
+    contact:'contact: hello@artcodedata.com'
   }
   
 };

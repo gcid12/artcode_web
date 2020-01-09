@@ -41,7 +41,7 @@ const content = {
     logos:'I have worked with',
     footerA:'A San Francisco ',
     footerB:' based developer ',
-    contact:'contact: hello@artcode.dev'
+    contact:'contact: hello@artcodedata.com'
   },
   studio:{
     first:'Art',
@@ -61,11 +61,11 @@ const content = {
     logos:'We have worked with',
     footerA:'A San Francisco ',
     footerB:' based company ',
-    contact:'contact: hello@artcode.dev'
+    contact:'contact: hello@artcodedata.com'
   }
  
 };
-const info = content.portfolio;
+const info = content.studio;
 
 
 class Home extends React.Component {
@@ -638,7 +638,7 @@ class Home extends React.Component {
         </div>
         <div className="ac_top_right ac_show_mobile">
           <div className="fatfacex">
-            hello@artcode.dev
+            hello@artcodedata.com
           </div>
         </div>
         <div className="ac_top_menu">
@@ -666,7 +666,7 @@ class Home extends React.Component {
           
           <div className="ac_hide_mobile">{info.footerA} <FaHeart /> {info.footerB}</div>
   
-          <div className="ac_hide_mobile">contact: hello@artcode.dev</div>
+          <div className="ac_hide_mobile">contact: hello@artcodedata.com</div>
           
         </div>
         

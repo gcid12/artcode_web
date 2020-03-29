@@ -45,7 +45,7 @@ const content = {
   },
   studio:{
     first:'Art',
-    last:'coDe',
+    last:'coDe + datA',
     welcome:[
       'Welcome to art+code , a Digital agency that translates big ',
       'iDeas',
@@ -65,7 +65,7 @@ const content = {
   }
  
 };
-const info = content.studio;
+const info = content.portfolio;
 
 
 class Home extends React.Component {
